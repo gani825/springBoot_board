@@ -1,0 +1,11 @@
+#
+spring:
+  application:
+    name: board # 프로젝트 이름
+  datasource: # 데이터 베이스 접속 정보
+    url: jdbc:mysql://localhost:3306/board
+    username: root
+    password: green502
+
+mybatis: # Mybatis 세팅
+  mapper-locations: mappers/**/*.xml # xml 파일의 위치 정보
