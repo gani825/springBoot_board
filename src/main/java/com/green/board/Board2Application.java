@@ -1,4 +1,4 @@
-package com.green.board2;
+package com.green.board;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
