@@ -1,8 +1,11 @@
 package com.green.board.application;
 
+import com.green.board.application.model.BoardGetRes;
 import com.green.board.application.model.BoardPostReq;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /*
 서버가 기동되면 @Service 애노테이션을 가지고 있는 클래스는
@@ -21,4 +24,9 @@ public class BoardService {
     public int postBoard(BoardPostReq req) {
         return boardMapper.save(req);
     }
+
+    public List<BoardGetRes> getBoardList() {
+        return boardMapper.findAll();
+    }
+
 }
