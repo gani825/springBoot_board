@@ -1,6 +1,5 @@
 package com.green.board.application;
 
-import com.green.board.application.model.BoardGetRes;
 import com.green.board.application.model.BoardPostReq;
 import org.springframework.stereotype.Component;
 
@@ -8,17 +7,15 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.List;
 
-//@Component // 빈 등록
-public class BoardMapperImpl implements BoardMapper {
+//@Component //빈등록
+public class BoardMapperImpl {
     private final DataSource dataSource; // Spring에서 관리하는 커넥션 풀
 
     public BoardMapperImpl(DataSource dataSource) {
         this.dataSource = dataSource;
     }
 
-    @Override
     public int save(BoardPostReq req) {
         // 1. SQL 문 (MyBatis XML에 정의된 내용)
         String sql = "INSERT INTO board SET title = ?, contents = ?";
@@ -49,11 +46,6 @@ public class BoardMapperImpl implements BoardMapper {
             close(pstmt);
             close(conn);
         }
-    }
-
-    @Override
-    public List<BoardGetRes> findAll() {
-        return List.of();
     }
 
     private void close(AutoCloseable resource) {
